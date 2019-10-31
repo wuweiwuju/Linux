@@ -1,0 +1,81 @@
+基础IO：回顾标准库IO/认识系统调用IO/认识描述符理解重定向/文件系统基本认识-软硬连接/动态库静态库生成使用
+回顾标准库：
+	FILE* fopen(char *filename,char *mode)-"r/r+/w/w+/a/a+"
+	fread(char *buf,size_t bsize,size_t nnum,FILE *fp)
+	fwrite(char *data,size_t bsize,size_t nnum,FILE *fp)
+	fseek(FILE *fp,ssize_t offset,int whence)-SEEK_SET/SEEK_CUR/SEEK_END
+	fclose(FILE *fp)
+	
+	fgets(char *buf,size_t size,FILE *fp)---从指定文件中读取一行数据
+	
+	stdin-标准输入/stdout-标准输出/stderr-标准错误   std::cin std::cout std::cerr
+	printf(const char *format,...)
+	fprintf(FILE *stream,const char *format,...)    fprintf(stdout,const char *format,...) == printf
+	sprintf(char *buf,const char *format,...)
+	scanf(char *format,...)
+	
+	1.打开模式是a,写入的时候总是写入文件末尾，并且不管写位置如何跳转
+	2.fread/fwrite返回值都是块个数，而不是数据字节长度，因此写法中块大小给1，更利于使用
+	3.从文件中读取的数据进行字符串处理的时候需要注意，文件内容中有可能是空数据，导致文件内容字符串处理不完全
+	4.非以追加方式打开时，文件的默认写入位置是在起始位置，注意会覆盖式写入数据
+	5.w方式打开文件时，会清空原有内容
+	
+系统调用接口：
+	open(char *filename,int flag)
+	flag:
+	必选选项，并且只能选择其一
+	O_RDONLY-只读
+	O_WRONLY-只写
+	O_RDWR-可读可写
+	可选选项
+	O_CREAT 若文件不存在则创建
+	O_APPEND 写入数据使用追加写方式
+	O_TRUNC 打开文件的时候清空原有数据
+	
+	mode 当使用O_CREAT的时候有可能新建文件，因此需要指定文件的权限
+	mode &(~umask)= 实际最终得到的文件权限
+	
+	open返回值：错误返回-1；成功返回一个非负整数--文件描述符--打开的文件的操作句柄
+	
+	ssize_t write(int fd,const void* buf,size_t count)
+	fd:文件描述符     buf:要写入的数据的缓冲区首地址    count：要写入的数据长度
+	返回值：成功时返回实际写入的字节数； 失败时返回-1
+	
+	ssize_t read(int fd,const void* buf,size_t count)
+	fd:文件描述符     buf:一块缓冲区，数据的放置位置    count：想要读取的数据长度
+	返回值：成功时返回实际写入的字节数； 失败时返回-1  返回0表示读取到了文件末尾
+	
+动态库静态库生成使用：
+		库文件：把一大堆代码的实现打包成一个文件，库中代码不能有main函数
+		动态库的生成：gcc
+			gcc -c child.c -o child.o
+			gcc --share child.o -o child
+		静态库的生成：
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
