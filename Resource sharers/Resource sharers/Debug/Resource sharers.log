@@ -1,0 +1,3 @@
+﻿  main.cpp
+d:\代码\linux\resource sharers\resource sharers\util.hpp(33): warning C4244: “初始化”: 从“uint64_t”转换到“unsigned int”，可能丢失数据
+  Resource sharers.vcxproj -> D:\代码\Linux\Resource sharers\Debug\Resource sharers.exe
