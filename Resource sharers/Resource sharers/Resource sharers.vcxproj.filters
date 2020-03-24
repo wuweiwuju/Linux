@@ -23,5 +23,11 @@
     <ClInclude Include="util.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="client.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="httplib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

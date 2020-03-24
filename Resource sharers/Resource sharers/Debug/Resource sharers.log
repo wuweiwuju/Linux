@@ -1,3 +1,11 @@
 ﻿  main.cpp
-d:\代码\linux\resource sharers\resource sharers\util.hpp(33): warning C4244: “初始化”: 从“uint64_t”转换到“unsigned int”，可能丢失数据
+d:\代码\linux\resource sharers\resource sharers\util.hpp(40): warning C4244: “初始化”: 从“uint64_t”转换到“unsigned int”，可能丢失数据
+d:\代码\linux\resource sharers\resource sharers\httplib.h(1535): warning C4244: “=”: 从“uint64_t”转换到“size_t”，可能丢失数据
+d:\代码\linux\resource sharers\resource sharers\httplib.h(936): warning C4244: “参数”: 从“uint64_t”转换到“size_t”，可能丢失数据
+  d:\代码\linux\resource sharers\resource sharers\httplib.h(1844): note: 参见对正在编译的函数 模板 实例化“bool httplib::detail::read_content<httplib::Request>(httplib::Stream &,T &,uint64_t,bool &,httplib::Progress)”的引用
+          with
+          [
+              T=httplib::Request
+          ]
+d:\代码\linux\resource sharers\resource sharers\httplib.h(940): warning C4244: “参数”: 从“uint64_t”转换到“size_t”，可能丢失数据
   Resource sharers.vcxproj -> D:\代码\Linux\Resource sharers\Debug\Resource sharers.exe
